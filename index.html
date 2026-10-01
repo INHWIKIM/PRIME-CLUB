@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIME - 수원대학교 도시부동산학과 학술·진로 동아리</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <style>
+        body { font-family: 'Pretendard', sans-serif; }
+        html { scroll-behavior: smooth; }
+        .hero-bg {
+            background-color: #f0f4f8;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .mobile-menu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+        .mobile-menu.open { max-height: 400px; }
+    </style>
+    <script>
+        tailwind.config = { theme: { extend: { colors: {
+            primary: '#1e3a8a',
+            secondary: '#2563eb',
+        }}}}
+    </script>
+</head>
+<body class="text-gray-800 antialiased bg-white">
+
+    <!-- Nav -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <div class="max-w-5xl mx-auto px-4 flex justify-between items-center h-16">
+            <a href="#" class="text-2xl font-bold text-primary tracking-tighter">PRIME.</a>
+            <div class="hidden md:flex gap-6 text-sm">
+                <a href="#overview" class="text-gray-500 hover:text-secondary font-medium transition">개요</a>
+                <a href="#goals" class="text-gray-500 hover:text-secondary font-medium transition">목표</a>
+                <a href="#org" class="text-gray-500 hover:text-secondary font-medium transition">운영 체계</a>
+                <a href="#detail" class="text-gray-500 hover:text-secondary font-medium transition">세부 활동</a>
+                <a href="#roadmap" class="text-gray-500 hover:text-secondary font-medium transition">로드맵</a>
+                <a href="#schedule" class="text-gray-500 hover:text-secondary font-medium transition">연간 계획</a>
+                <a href="#principles" class="text-gray-500 hover:text-secondary font-medium transition">운영 원칙</a>
+                <a href="#effects" class="text-gray-500 hover:text-secondary font-medium transition">기대 효과</a>
+            </div>
+            <button class="md:hidden p-2" onclick="document.getElementById('mob').classList.toggle('open')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+        <div id="mob" class="mobile-menu md:hidden px-4">
+            <div class="pb-3 space-y-1 text-sm">
+                <a href="#overview" class="block py-1.5 text-gray-600" onclick="document.getElementById('mob').classList.remove('open')">개요</a>
+                <a href="#goals" class="block py-1.5 text-gray-600" onclick="document.getElementById('mob').classList.remove('open')">목표</a>
+                <a href="#org" class="block py-1.5 text-gray-600" onclick="document.getElementById('mob').classList.remove('open')">운영 체계</a>
+                <a href="#detail" class="block py-1.5 text-gray-600" onclick="document.getElementById('mob').classList.remove('open')">세부 활동</a>
+                <a href="#roadmap" class="block py-1.5 text-gray-600" onclick="document.getElementById('mob').classList.remove('open')">로드맵</a>
+                <a href="#schedule" class="block py-1.5 text-gray-600" onclick="document.getElementById('mob').classList.remove('open')">연간 계획</a>
+                <a href="#principles" class="block py-1.5 text-gray-600" onclick="document.getElementById('mob').classList.remove('open')">운영 원칙</a>
+                <a href="#effects" class="block py-1.5 text-gray-600" onclick="document.getElementById('mob').classList.remove('open')">기대 효과</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero-bg pt-32 pb-20 md:pt-40 md:pb-28 border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-primary text-sm font-semibold mb-4">수원대학교 도시부동산학과 학술·진로 동아리</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 tracking-tight mb-6">
+                도시·부동산 분야의<br><span class="text-secondary">최상급 인재</span>로 성장하다
+            </h1>
+            <p class="text-lg text-gray-500 max-w-xl mx-auto mb-10">
+                전공 지식 · 실무 역량 · 소통 능력<br>
+                PRIME에서 취업 경쟁력을 완성하세요.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#overview" class="bg-primary hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition">알아보기</a>
+                <a href="#org" class="bg-white hover:bg-gray-50 text-primary font-bold py-3 px-8 rounded-lg shadow border border-gray-200 transition">운영 체계</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. 개요 -->
+    <section id="overview" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">동아리 개요</h2>
+                <div class="w-12 h-1 bg-secondary mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-10 items-start reveal">
+                <table class="w-full text-sm border-collapse">
+                    <tbody>
+                        <tr class="border-b border-gray-100"><td class="py-3 pr-4 font-bold text-gray-900 w-28 align-top">동아리명</td><td class="py-3 text-gray-600">프라임 (PRIME)</td></tr>
+                        <tr class="border-b border-gray-100"><td class="py-3 pr-4 font-bold text-gray-900 align-top">소속</td><td class="py-3 text-gray-600">수원대학교 도시부동산학과</td></tr>
+                        <tr class="border-b border-gray-100"><td class="py-3 pr-4 font-bold text-gray-900 align-top">성격</td><td class="py-3 text-gray-600">공모전·자격증·현장조사·커뮤니케이션 결합 학술·진로 동아리</td></tr>
+                        <tr><td class="py-3 pr-4 font-bold text-gray-900 align-top">핵심 방향</td>
+                            <td class="py-3">
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2.5 py-0.5 bg-blue-50 text-primary rounded text-xs font-semibold">공모전 실적</span>
+                                    <span class="px-2.5 py-0.5 bg-blue-50 text-primary rounded text-xs font-semibold">자격증 역량</span>
+                                    <span class="px-2.5 py-0.5 bg-blue-50 text-primary rounded text-xs font-semibold">현장분석</span>
+                                    <span class="px-2.5 py-0.5 bg-blue-50 text-primary rounded text-xs font-semibold">발표·마케팅</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="bg-blue-50 p-6 rounded-xl">
+                    <h3 class="font-bold text-primary mb-2">명칭의 의미</h3>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        <strong>PRIME</strong> — 부동산 용어로 '최상급 입지·가치'를 뜻하는 표현.<br>
+                        도시·부동산 분야의 <strong>핵심 인재</strong> 양성 지향.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 목적 및 목표 -->
+    <section id="goals" class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">활동 목적 및 목표</h2>
+                <div class="w-12 h-1 bg-secondary mx-auto"></div>
+            </div>
+            <div class="overflow-x-auto reveal">
+                <table class="w-full text-sm border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+                    <thead><tr class="bg-primary text-white">
+                        <th class="py-3 px-4 text-left w-36">구분</th>
+                        <th class="py-3 px-4 text-left">세부 목표</th>
+                        <th class="py-3 px-4 text-left w-56">성과 지표</th>
+                    </tr></thead>
+                    <tbody class="text-gray-600">
+                        <tr class="border-b border-gray-100"><td class="py-3 px-4 font-bold text-gray-900">공모전·프로젝트</td><td class="py-3 px-4">교내외 공모전 팀 참여, 보고서·PPT·발표 역량 강화</td><td class="py-3 px-4 text-gray-400">탐색·지원 건수, 수상 실적</td></tr>
+                        <tr class="border-b border-gray-100 bg-gray-50/50"><td class="py-3 px-4 font-bold text-gray-900">자격증 학습</td><td class="py-3 px-4">투자자산운용사 · 신용분석사 및 공인중개사 학술 스터디 운영</td><td class="py-3 px-4 text-gray-400">진도율, 모의고사, 합격 인원</td></tr>
+                        <tr class="border-b border-gray-100"><td class="py-3 px-4 font-bold text-gray-900">현장 분석</td><td class="py-3 px-4">수원·광교 생활권 상권·역세권·주거지·개발사업 직접 조사</td><td class="py-3 px-4 text-gray-400">답사 횟수, 입지분석 보고서</td></tr>
+                        <tr><td class="py-3 px-4 font-bold text-gray-900">커뮤니케이션</td><td class="py-3 px-4">데이터 기반 부동산 이슈 설명 · 설득력 확보</td><td class="py-3 px-4 text-gray-400">발표·콘텐츠 수, 모의 PT 참여</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 운영 체계 -->
+    <section id="org" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">운영 체계</h2>
+                <div class="w-12 h-1 bg-secondary mx-auto"></div>
+            </div>
+
+            <!-- 조직도 -->
+            <div class="mb-16 reveal">
+                <h3 class="text-lg font-bold text-gray-900 mb-6 text-center">운영진 조직도</h3>
+                <div class="max-w-3xl mx-auto">
+                    <!-- 실장 -->
+                    <div class="flex justify-center">
+                        <div class="bg-primary text-white px-6 py-3 rounded-lg text-center">
+                            <p class="font-bold">실장</p>
+                            <p class="text-xs opacity-70 mt-0.5">전체 운영 · 대외협력</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-center"><div class="w-px h-6 bg-gray-300"></div></div>
+                    <!-- 부실장 -->
+                    <div class="flex justify-center">
+                        <div class="bg-secondary text-white px-6 py-3 rounded-lg text-center">
+                            <p class="font-bold">부실장</p>
+                            <p class="text-xs opacity-70 mt-0.5">내부 운영 · 회의록</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-center"><div class="w-px h-6 bg-gray-300"></div></div>
+                    <div class="hidden md:block w-3/4 h-px bg-gray-300 mx-auto"></div>
+                    <!-- 팀장들 -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-0">
+                        <div class="border-2 border-blue-200 bg-blue-50 px-3 py-3 rounded-lg text-center">
+                            <p class="text-sm font-bold text-gray-900">기획팀장</p>
+                            <p class="text-xs text-gray-500">공모전 · 답사</p>
+                        </div>
+                        <div class="border-2 border-blue-200 bg-blue-50 px-3 py-3 rounded-lg text-center">
+                            <p class="text-sm font-bold text-gray-900">학술팀장</p>
+                            <p class="text-xs text-gray-500">자격증 스터디</p>
+                        </div>
+                        <div class="border-2 border-blue-200 bg-blue-50 px-3 py-3 rounded-lg text-center">
+                            <p class="text-sm font-bold text-gray-900">홍보팀장</p>
+                            <p class="text-xs text-gray-500">SNS · 콘텐츠</p>
+                        </div>
+                        <div class="border-2 border-blue-200 bg-blue-50 px-3 py-3 rounded-lg text-center">
+                            <p class="text-sm font-bold text-gray-900">총무</p>
+                            <p class="text-xs text-gray-500">예산 · 회비 · 지원사업</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 활동 부문 -->
+            <h3 class="text-lg font-bold text-gray-900 mb-6 text-center reveal">활동 부문별 팀 구성</h3>
+            <div class="grid md:grid-cols-2 gap-5 reveal">
+                <div class="border border-gray-200 rounded-xl p-5 hover:shadow-sm transition">
+                    <h4 class="font-bold text-gray-900 mb-1">공모전·프로젝트팀</h4>
+                    <p class="text-sm text-gray-500 mb-3">공모전 탐색 → 팀 구성 → 자료조사 → 보고서·PPT → 모의발표</p>
+                    <p class="text-xs text-primary font-semibold bg-blue-50 px-3 py-1.5 rounded">결과물: 출품작, 발표자료, 참가·수상 이력, 회고보고서</p>
+                </div>
+                <div class="border border-gray-200 rounded-xl p-5 hover:shadow-sm transition">
+                    <h4 class="font-bold text-gray-900 mb-1">자격증 학습팀</h4>
+                    <p class="text-sm text-gray-500 mb-3">신용분석사·투자자산운용사 스터디, 공인중개사 기초 학술학습</p>
+                    <p class="text-xs text-primary font-semibold bg-blue-50 px-3 py-1.5 rounded">결과물: 주간 학습표, 요약노트, 문제풀이 자료, 합격 후기</p>
+                </div>
+                <div class="border border-gray-200 rounded-xl p-5 hover:shadow-sm transition">
+                    <h4 class="font-bold text-gray-900 mb-1">마케팅·커뮤니케이션팀</h4>
+                    <p class="text-sm text-gray-500 mb-3">부동산 카드뉴스, 이슈 브리핑, 발표·피칭 훈련, SNS 운영</p>
+                    <p class="text-xs text-primary font-semibold bg-blue-50 px-3 py-1.5 rounded">결과물: 카드뉴스, 발표 영상, 홍보물, 개인 포트폴리오</p>
+                </div>
+                <div class="border border-gray-200 rounded-xl p-5 hover:shadow-sm transition">
+                    <h4 class="font-bold text-gray-900 mb-1">현장조사·답사팀</h4>
+                    <p class="text-sm text-gray-500 mb-3">상권·역세권·신도시·재개발 지역 조사, 임장 보고서 작성</p>
+                    <p class="text-xs text-primary font-semibold bg-blue-50 px-3 py-1.5 rounded">결과물: 입지분석 지도, 답사보고서, 현장 사진자료</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. 세부 활동 방향 -->
+    <section id="detail" class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">세부 활동 방향</h2>
+                <div class="w-12 h-1 bg-secondary mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-5 reveal">
+                <div class="bg-white rounded-xl p-6 border border-gray-200">
+                    <h4 class="font-bold text-primary mb-3 text-lg">공모전 운영</h4>
+                    <p class="text-sm text-gray-600 mb-3">매월 첫째 주 정보 수집 → 적합성·난이도 기준 분류 → 3~5인 팀 구성</p>
+                    <p class="text-xs text-gray-500 leading-relaxed">주제 분석 → 현장조사 → 자료조사 → 아이디어 → 보고서·PPT → 모의발표 → 제출 → <span class="font-bold text-primary">회고</span></p>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-gray-200">
+                    <h4 class="font-bold text-primary mb-3 text-lg">자격증 학습</h4>
+                    <ul class="text-sm text-gray-600 space-y-1.5">
+                        <li>• 초기: 투자자산운용사 · 신용분석사</li>
+                        <li>• 확장: 민법 기초 → 공인중개사법령 → 부동산학개론</li>
+                        <li>• 진로별: 개발 · 금융 · 중개 · 자산관리 · 공공기관</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-gray-200">
+                    <h4 class="font-bold text-primary mb-3 text-lg">현장답사 및 입지분석</h4>
+                    <p class="text-sm text-gray-600 mb-2">수원역 · 광교중앙역 · 인계동 · 망포역 · 영통역 등</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 bg-blue-50 text-primary rounded text-xs">유동인구</span>
+                        <span class="px-2 py-0.5 bg-blue-50 text-primary rounded text-xs">업종 구성</span>
+                        <span class="px-2 py-0.5 bg-blue-50 text-primary rounded text-xs">공실률</span>
+                        <span class="px-2 py-0.5 bg-blue-50 text-primary rounded text-xs">대중교통</span>
+                        <span class="px-2 py-0.5 bg-blue-50 text-primary rounded text-xs">개발계획</span>
+                        <span class="px-2 py-0.5 bg-blue-50 text-primary rounded text-xs">주거환경</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-6 border border-gray-200">
+                    <h4 class="font-bold text-primary mb-3 text-lg">커뮤니케이션 역량</h4>
+                    <p class="text-sm text-gray-600 mb-2">월 1회 이슈 브리핑 + 프라임 PT 데이</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 bg-blue-50 text-primary rounded text-xs">청년주거</span>
+                        <span class="px-2 py-0.5 bg-blue-50 text-primary rounded text-xs">신도시</span>
+                        <span class="px-2 py-0.5 bg-blue-50 text-primary rounded text-xs">상권 변화</span>
+                        <span class="px-2 py-0.5 bg-blue-50 text-primary rounded text-xs">도시재생</span>
+                        <span class="px-2 py-0.5 bg-blue-50 text-primary rounded text-xs">부동산금융</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 학습 로드맵 -->
+    <section id="roadmap" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">자격증 학습 로드맵</h2>
+                <div class="w-12 h-1 bg-secondary mx-auto"></div>
+            </div>
+            <div class="space-y-4 reveal">
+                <div class="flex flex-col md:flex-row rounded-xl overflow-hidden border border-gray-200">
+                    <div class="bg-primary text-white p-5 md:w-44 flex flex-col justify-center items-center text-center shrink-0">
+                        <span class="text-xs font-bold opacity-70">STEP 1</span>
+                        <h3 class="font-bold mt-0.5">기초 역량</h3>
+                    </div>
+                    <div class="p-5 flex-1 bg-gray-50">
+                        <p class="font-semibold text-gray-900 text-sm">부동산학개론 · 부동산경제론 · 투자론 · 도시계획 기초 · 경제금융 시사</p>
+                        <p class="text-gray-500 text-xs mt-1">전공 복습, 이슈 브리핑, 엑셀·PPT·데이터 시각화 기초</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row rounded-xl overflow-hidden border border-gray-200">
+                    <div class="bg-secondary text-white p-5 md:w-44 flex flex-col justify-center items-center text-center shrink-0">
+                        <span class="text-xs font-bold opacity-70">STEP 2</span>
+                        <h3 class="font-bold mt-0.5">단기 목표</h3>
+                    </div>
+                    <div class="p-5 flex-1 bg-gray-50">
+                        <p class="font-semibold text-gray-900 text-sm">투자자산운용사 · 신용분석사 및 진로별 연계 자격증</p>
+                        <p class="text-gray-500 text-xs mt-1">주 1~2회 스터디, 주간 진도표, 기출·모의문제 풀이</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row rounded-xl overflow-hidden border border-gray-200">
+                    <div class="bg-blue-500 text-white p-5 md:w-44 flex flex-col justify-center items-center text-center shrink-0">
+                        <span class="text-xs font-bold opacity-70">STEP 3</span>
+                        <h3 class="font-bold mt-0.5">중장기 목표</h3>
+                    </div>
+                    <div class="p-5 flex-1 bg-gray-50">
+                        <p class="font-semibold text-gray-900 text-sm">공인중개사 학술 스터디 — 민법 기초 · 공인중개사법령 · 부동산학개론</p>
+                        <p class="text-gray-500 text-xs mt-1">방학 집중학습, 정기 모의고사, 사례·판례 중심 토론</p>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row rounded-xl overflow-hidden border border-gray-200">
+                    <div class="bg-blue-400 text-white p-5 md:w-44 flex flex-col justify-center items-center text-center shrink-0">
+                        <span class="text-xs font-bold opacity-70">STEP 4</span>
+                        <h3 class="font-bold mt-0.5">진로별 심화</h3>
+                    </div>
+                    <div class="p-5 flex-1 bg-gray-50">
+                        <p class="font-semibold text-gray-900 text-sm">개발 · PF · 금융 · 리츠 · 중개 · 자산관리 · 공공기관 등 진로별 역량</p>
+                        <p class="text-gray-500 text-xs mt-1">현직자 멘토링, 직무 분석, 포트폴리오 및 모의면접</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-xs text-gray-400 mt-4 text-center reveal">※ 개인 진로·학업 상황에 맞는 선택형 학습 경로 제공</p>
+        </div>
+    </section>
+
+    <!-- 6. 연간 활동계획 -->
+    <section id="schedule" class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">연간 활동계획</h2>
+                <div class="w-12 h-1 bg-secondary mx-auto"></div>
+            </div>
+            <div class="overflow-x-auto reveal">
+                <table class="w-full text-sm border-collapse bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200">
+                    <thead><tr class="bg-primary text-white">
+                        <th class="py-3 px-4 text-left w-24">기간</th>
+                        <th class="py-3 px-4 text-left">핵심 활동</th>
+                        <th class="py-3 px-4 text-left w-60">주요 결과물</th>
+                    </tr></thead>
+                    <tbody class="text-gray-600">
+                        <tr class="border-b border-gray-100"><td class="py-2.5 px-4 font-bold text-gray-900">10월</td><td class="py-2.5 px-4">회원 모집, 운영진 구성, 진로 조사, 연간 일정 수립</td><td class="py-2.5 px-4 text-gray-400">회원명부, 회칙, 연간계획서</td></tr>
+                        <tr class="border-b border-gray-100 bg-gray-50/50"><td class="py-2.5 px-4 font-bold text-gray-900">11~12월</td><td class="py-2.5 px-4">부동산 기초 특강, 공모전 정보 수집, 첫 현장답사</td><td class="py-2.5 px-4 text-gray-400">공모전 캘린더, 답사보고서</td></tr>
+                        <tr class="border-b border-gray-100"><td class="py-2.5 px-4 font-bold text-gray-900">1~3월</td><td class="py-2.5 px-4">공모전 팀 구성, 투자자산운용사·신용분석사 스터디</td><td class="py-2.5 px-4 text-gray-400">팀별 주제계획서, 주간 학습표</td></tr>
+                        <tr class="border-b border-gray-100 bg-gray-50/50"><td class="py-2.5 px-4 font-bold text-gray-900">4월</td><td class="py-2.5 px-4">공모전 자료조사·발표훈련, 부동산 이슈 브리핑</td><td class="py-2.5 px-4 text-gray-400">중간 발표자료, 피드백 기록</td></tr>
+                        <tr class="border-b border-gray-100"><td class="py-2.5 px-4 font-bold text-gray-900">5~8월</td><td class="py-2.5 px-4">방학 집중 스터디, 공모전 출품, 현직자·졸업생 멘토링</td><td class="py-2.5 px-4 text-gray-400">출품작, 학습노트, 멘토링 보고서</td></tr>
+                        <tr class="border-b border-gray-100 bg-gray-50/50"><td class="py-2.5 px-4 font-bold text-gray-900">9월</td><td class="py-2.5 px-4">2학기 신규 모집, 수원·광교 생활권 분석 프로젝트</td><td class="py-2.5 px-4 text-gray-400">입지분석 보고서, 카드뉴스</td></tr>
+                        <tr class="border-b border-gray-100"><td class="py-2.5 px-4 font-bold text-gray-900">10월</td><td class="py-2.5 px-4">공인중개사 기초 학술 스터디, 모의 PT·면접</td><td class="py-2.5 px-4 text-gray-400">요약자료, 발표 영상</td></tr>
+                        <tr class="border-b border-gray-100 bg-gray-50/50"><td class="py-2.5 px-4 font-bold text-gray-900">11월</td><td class="py-2.5 px-4">학과 연계 세미나, 연말 공모전 도전, 성과 정리</td><td class="py-2.5 px-4 text-gray-400">학술제·발표회 자료</td></tr>
+                        <tr><td class="py-2.5 px-4 font-bold text-gray-900">12월</td><td class="py-2.5 px-4">활동평가, 우수회원 선정, 개인 포트폴리오 제작</td><td class="py-2.5 px-4 text-gray-400">활동보고서, 포트폴리오</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. 운영 원칙 -->
+    <section id="principles" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">운영 원칙 및 성과관리</h2>
+                <div class="w-12 h-1 bg-secondary mx-auto"></div>
+            </div>
+            <div class="overflow-x-auto reveal">
+                <table class="w-full text-sm border-collapse bg-white rounded-xl overflow-hidden shadow-sm border border-gray-200">
+                    <thead><tr class="bg-primary text-white">
+                        <th class="py-3 px-5 text-left w-36">운영 항목</th>
+                        <th class="py-3 px-5 text-left">실행 내용</th>
+                    </tr></thead>
+                    <tbody class="text-gray-600">
+                        <tr class="border-b border-gray-100"><td class="py-3 px-5 font-bold text-gray-900">정기 운영</td><td class="py-3 px-5">정기회의 주 1회 / 격주 1회, 자격증 스터디 주 1~2회, 공모전 집중기간 팀별 회의</td></tr>
+                        <tr class="border-b border-gray-100 bg-gray-50/50"><td class="py-3 px-5 font-bold text-gray-900">성과 중심 관리</td><td class="py-3 px-5">출석보다 결과물 중심 — 출품작·진도·보고서·발표자료·콘텐츠</td></tr>
+                        <tr class="border-b border-gray-100"><td class="py-3 px-5 font-bold text-gray-900">월말 회고</td><td class="py-3 px-5">매월 잘한 점 · 개선점 · 다음 달 목표 기록</td></tr>
+                        <tr class="border-b border-gray-100 bg-gray-50/50"><td class="py-3 px-5 font-bold text-gray-900">자료 축적</td><td class="py-3 px-5">보고서·PPT·영상·사진·학습노트 → 공용 자료실 정리, 지식자산화</td></tr>
+                        <tr><td class="py-3 px-5 font-bold text-gray-900">대외 연계</td><td class="py-3 px-5">교수·졸업생·현직자·유관기관 멘토링 및 특강·세미나</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. 기대 효과 -->
+    <section id="effects" class="py-20 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12 reveal">
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">기대 효과</h2>
+                <div class="w-12 h-1 bg-secondary mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-4 gap-5 mb-12 reveal">
+                <div class="bg-white border border-gray-200 rounded-xl p-5 text-center">
+                    <h4 class="font-bold text-primary mb-2">전공 역량</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">도시계획·부동산시장·투자·상권·주거 문제 분석 능력 향상</p>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-xl p-5 text-center">
+                    <h4 class="font-bold text-primary mb-2">취업 경쟁력</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">공모전 이력, 자격증, 발표자료, 현장조사 보고서 등 포트폴리오 축적</p>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-xl p-5 text-center">
+                    <h4 class="font-bold text-primary mb-2">실무 역량</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">문제 정의, 자료조사, 데이터 정리, PPT, 발표·피칭, 협업 경험</p>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-xl p-5 text-center">
+                    <h4 class="font-bold text-primary mb-2">네트워크</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">학과 선후배, 졸업생, 현직자, 외부 참가자와의 교류 기반</p>
+                </div>
+            </div>
+            <div class="bg-primary rounded-xl p-6 text-center text-white reveal">
+                <p class="text-sm md:text-base font-medium">
+                    직접 분석 · 실전 경험 · 취업 포트폴리오 전환 — <strong>전공 실무형 동아리</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-8 border-t border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <p class="text-xl font-bold text-primary tracking-tighter mb-1">PRIME.</p>
+            <p class="text-gray-400 text-xs">수원대학교 도시부동산학과 학술·진로 동아리</p>
+            <p class="text-gray-300 text-xs mt-4">&copy; 2026 PRIME Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    </script>
+</body>
+</html>
